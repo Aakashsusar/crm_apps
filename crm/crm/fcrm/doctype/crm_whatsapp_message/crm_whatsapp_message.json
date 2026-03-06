@@ -1,0 +1,234 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "format:WHATSAPP-{reference_doctype}-{#####}",
+    "creation": "2026-01-30 10:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "section_break_main",
+        "message_id",
+        "phone_number",
+        "country_code",
+        "column_break_main",
+        "status",
+        "direction",
+        "sent_by",
+        "section_break_template",
+        "template_name",
+        "template_language",
+        "column_break_template",
+        "message_content",
+        "media_url",
+        "section_break_reference",
+        "reference_doctype",
+        "reference_docname",
+        "column_break_reference",
+        "callback_data",
+        "campaign_id",
+        "section_break_timestamps",
+        "sent_at",
+        "delivered_at",
+        "column_break_timestamps",
+        "read_at",
+        "failed_at",
+        "section_break_error",
+        "error_message"
+    ],
+    "fields": [
+        {
+            "fieldname": "message_id",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Message ID",
+            "unique": 1
+        },
+        {
+            "fieldname": "phone_number",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "label": "Phone Number",
+            "reqd": 1
+        },
+        {
+            "default": "+91",
+            "fieldname": "country_code",
+            "fieldtype": "Data",
+            "label": "Country Code"
+        },
+        {
+            "default": "Pending",
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "label": "Status",
+            "options": "Pending\nSent\nDelivered\nRead\nFailed\nReceived",
+            "reqd": 1
+        },
+        {
+            "default": "Outgoing",
+            "fieldname": "direction",
+            "fieldtype": "Select",
+            "label": "Direction",
+            "options": "Outgoing\nIncoming"
+        },
+        {
+            "fieldname": "template_name",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Template Name"
+        },
+        {
+            "default": "en",
+            "fieldname": "template_language",
+            "fieldtype": "Data",
+            "label": "Template Language"
+        },
+        {
+            "fieldname": "message_content",
+            "fieldtype": "Long Text",
+            "label": "Message Content"
+        },
+        {
+            "fieldname": "media_url",
+            "fieldtype": "Data",
+            "label": "Media URL"
+        },
+        {
+            "fieldname": "reference_doctype",
+            "fieldtype": "Link",
+            "in_standard_filter": 1,
+            "label": "Reference DocType",
+            "options": "DocType"
+        },
+        {
+            "fieldname": "reference_docname",
+            "fieldtype": "Dynamic Link",
+            "in_standard_filter": 1,
+            "label": "Reference Document",
+            "options": "reference_doctype"
+        },
+        {
+            "fieldname": "sent_by",
+            "fieldtype": "Link",
+            "label": "Sent By",
+            "options": "User"
+        },
+        {
+            "fieldname": "callback_data",
+            "fieldtype": "Long Text",
+            "label": "Callback Data"
+        },
+        {
+            "fieldname": "campaign_id",
+            "fieldtype": "Data",
+            "label": "Campaign ID"
+        },
+        {
+            "fieldname": "sent_at",
+            "fieldtype": "Datetime",
+            "label": "Sent At"
+        },
+        {
+            "fieldname": "delivered_at",
+            "fieldtype": "Datetime",
+            "label": "Delivered At"
+        },
+        {
+            "fieldname": "read_at",
+            "fieldtype": "Datetime",
+            "label": "Read At"
+        },
+        {
+            "fieldname": "failed_at",
+            "fieldtype": "Datetime",
+            "label": "Failed At"
+        },
+        {
+            "fieldname": "error_message",
+            "fieldtype": "Text",
+            "label": "Error Message"
+        },
+        {
+            "fieldname": "section_break_main",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "column_break_main",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "section_break_template",
+            "fieldtype": "Section Break",
+            "label": "Template Details"
+        },
+        {
+            "fieldname": "column_break_template",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "section_break_reference",
+            "fieldtype": "Section Break",
+            "label": "Reference"
+        },
+        {
+            "fieldname": "column_break_reference",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "section_break_timestamps",
+            "fieldtype": "Section Break",
+            "label": "Timestamps"
+        },
+        {
+            "fieldname": "column_break_timestamps",
+            "fieldtype": "Column Break"
+        },
+        {
+            "collapsible": 1,
+            "fieldname": "section_break_error",
+            "fieldtype": "Section Break",
+            "label": "Error Details"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2026-01-30 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "FCRM",
+    "name": "CRM WhatsApp Message",
+    "naming_rule": "Expression",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "Sales User",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "Sales Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "creation",
+    "sort_order": "DESC",
+    "states": [],
+    "track_changes": 1
+}

@@ -1,0 +1,27 @@
+{
+    "content": null,
+    "creation": "2026-02-24 10:30:00.000000",
+    "docstatus": 0,
+    "doctype": "Page",
+    "icon": "history",
+    "idx": 0,
+    "modified": "2026-02-24 10:30:00.000000",
+    "modified_by": "Administrator",
+    "module": "Lead Routing",
+    "name": "lead-history",
+    "owner": "Administrator",
+    "page_name": "lead-history",
+    "roles": [
+        {
+            "role": "System Manager"
+        },
+        {
+            "role": "All"
+        }
+    ],
+    "script": null,
+    "standard": "Yes",
+    "style": null,
+    "system_page": 0,
+    "title": "Lead History"
+}

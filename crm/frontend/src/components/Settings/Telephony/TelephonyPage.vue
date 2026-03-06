@@ -1,0 +1,31 @@
+<template>
+  <TelephonyMain
+    v-if="step === 'telephony-settings'"
+    @updateStep="updateStep"
+  />
+  <TwilioSettings
+    v-else-if="step === 'twilio-settings'"
+    @updateStep="updateStep"
+  />
+  <ExotelSettings
+    v-else-if="step === 'exotel-settings'"
+    @updateStep="updateStep"
+  />
+  <TataTeleSettings
+    v-else-if="step === 'tata-tele-settings'"
+    @updateStep="updateStep"
+  />
+</template>
+<script setup>
+import TelephonyMain from './TelephonyMain.vue'
+import ExotelSettings from './ExotelSettings.vue'
+import TwilioSettings from './TwilioSettings.vue'
+import TataTeleSettings from './TataTeleSettings.vue'
+import { ref } from 'vue'
+
+const step = ref('telephony-settings')
+
+function updateStep(newStep) {
+  step.value = newStep
+}
+</script>

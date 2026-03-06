@@ -1,0 +1,88 @@
+{
+    "actions": [],
+    "creation": "2026-02-23 10:00:00.000000",
+    "description": "Tracks lead department transitions as a child table row",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "department",
+        "shift",
+        "assigned_user",
+        "column_break_1",
+        "entered_at",
+        "exited_at",
+        "action",
+        "section_break_2",
+        "notes"
+    ],
+    "fields": [
+        {
+            "fieldname": "department",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Department",
+            "options": "Department Pipeline Stage",
+            "reqd": 1
+        },
+        {
+            "fieldname": "shift",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Shift",
+            "options": "Department Shift"
+        },
+        {
+            "fieldname": "assigned_user",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Assigned User",
+            "options": "User"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "entered_at",
+            "fieldtype": "Datetime",
+            "in_list_view": 1,
+            "label": "Entered At",
+            "reqd": 1
+        },
+        {
+            "fieldname": "exited_at",
+            "fieldtype": "Datetime",
+            "label": "Exited At"
+        },
+        {
+            "fieldname": "action",
+            "fieldtype": "Select",
+            "in_list_view": 1,
+            "label": "Action",
+            "options": "Initial\nForward\nBackward\nReject\nManager Override",
+            "reqd": 1
+        },
+        {
+            "fieldname": "section_break_2",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "notes",
+            "fieldtype": "Small Text",
+            "label": "Notes"
+        }
+    ],
+    "index_web_pages_for_search": 0,
+    "istable": 1,
+    "links": [],
+    "modified": "2026-02-23 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Lead Routing",
+    "name": "Lead Department Log",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "track_changes": 0
+}

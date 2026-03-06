@@ -1,0 +1,160 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-30 10:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "enabled",
+  "section_break_api",
+  "api_endpoint",
+  "column_break_api_2",
+  "api_token",
+  "column_break_webhook",
+  "webhook_token",
+  "section_break_account",
+  "account_id",
+  "column_break_phone",
+  "phone_number",
+  "section_break_agent",
+  "agent_number",
+  "column_break_caller",
+  "caller_id"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
+  },
+  {
+   "fieldname": "section_break_api",
+   "fieldtype": "Section Break",
+   "label": "API Configuration",
+   "hide_border": 1
+  },
+  {
+   "depends_on": "enabled",
+   "fieldname": "api_endpoint",
+   "fieldtype": "Data",
+   "label": "API Endpoint",
+   "placeholder": "https://api-smartflo.tatateleservices.com/v1/click_to_call",
+   "mandatory_depends_on": "enabled",
+   "description": "The API endpoint for click-to-call requests"
+  },
+  {
+   "fieldname": "column_break_api_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "enabled",
+   "fieldname": "api_token",
+   "fieldtype": "Password",
+   "label": "API Token",
+   "mandatory_depends_on": "enabled",
+   "description": "Authentication token for Tata Teleservices API"
+  },
+  {
+   "fieldname": "column_break_webhook",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "enabled",
+   "fieldname": "webhook_token",
+   "fieldtype": "Password",
+   "label": "Webhook Token",
+   "description": "Token to validate incoming webhooks from Tata Teleservices"
+  },
+  {
+   "fieldname": "section_break_account",
+   "fieldtype": "Section Break",
+   "label": "Account Configuration",
+   "hide_border": 1
+  },
+  {
+   "depends_on": "enabled",
+   "fieldname": "account_id",
+   "fieldtype": "Data",
+   "label": "Account ID",
+   "mandatory_depends_on": "enabled",
+   "description": "Your Tata Teleservices Account ID"
+  },
+  {
+   "fieldname": "column_break_phone",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "enabled",
+   "fieldname": "phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number",
+   "description": "Default phone number to use for calls"
+  },
+  {
+   "fieldname": "section_break_agent",
+   "fieldtype": "Section Break",
+   "label": "Agent Configuration",
+   "hide_border": 1
+  },
+  {
+   "depends_on": "enabled",
+   "fieldname": "agent_number",
+   "fieldtype": "Data",
+   "label": "Agent Number",
+   "mandatory_depends_on": "enabled",
+   "description": "Your virtual number (agent number) from Tata Teleservices"
+  },
+  {
+   "fieldname": "column_break_caller",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "enabled",
+   "fieldname": "caller_id",
+   "fieldtype": "Data",
+   "label": "Caller ID",
+   "description": "The number that will appear on recipient's phone"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-01-30 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "FCRM",
+ "name": "CRM Tata Tele Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Sales Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "All",
+   "share": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

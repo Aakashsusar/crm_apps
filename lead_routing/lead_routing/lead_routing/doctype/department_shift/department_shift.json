@@ -1,0 +1,84 @@
+{
+    "actions": [],
+    "autoname": "field:shift_name",
+    "creation": "2026-02-23 10:00:00.000000",
+    "description": "Defines a work shift with time boundaries for lead routing",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "shift_name",
+        "enabled",
+        "column_break_1",
+        "start_time",
+        "end_time"
+    ],
+    "fields": [
+        {
+            "fieldname": "shift_name",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Shift Name",
+            "reqd": 1,
+            "unique": 1
+        },
+        {
+            "default": "1",
+            "fieldname": "enabled",
+            "fieldtype": "Check",
+            "in_list_view": 1,
+            "label": "Enabled"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "description": "Shift start time (e.g. 06:00:00)",
+            "fieldname": "start_time",
+            "fieldtype": "Time",
+            "in_list_view": 1,
+            "label": "Start Time",
+            "reqd": 1
+        },
+        {
+            "description": "Shift end time (e.g. 14:00:00). If end < start, shift spans midnight.",
+            "fieldname": "end_time",
+            "fieldtype": "Time",
+            "in_list_view": 1,
+            "label": "End Time",
+            "reqd": 1
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2026-02-23 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Lead Routing",
+    "name": "Department Shift",
+    "naming_rule": "By fieldname",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "read": 1,
+            "role": "All"
+        }
+    ],
+    "show_title_field_in_link": 1,
+    "sort_field": "start_time",
+    "sort_order": "ASC",
+    "states": [],
+    "title_field": "shift_name",
+    "track_changes": 1
+}

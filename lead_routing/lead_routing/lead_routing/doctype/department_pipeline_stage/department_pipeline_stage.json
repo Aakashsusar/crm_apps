@@ -1,0 +1,125 @@
+{
+    "actions": [],
+    "autoname": "field:stage_name",
+    "creation": "2026-02-23 10:00:00.000000",
+    "description": "Defines a department stage in the lead routing pipeline",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "stage_name",
+        "stage_order",
+        "is_terminal",
+        "enabled",
+        "column_break_1",
+        "department_role",
+        "manager_role",
+        "section_break_team",
+        "team_members",
+        "section_break_2",
+        "internal_statuses"
+    ],
+    "fields": [
+        {
+            "fieldname": "stage_name",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Stage Name",
+            "reqd": 1,
+            "unique": 1
+        },
+        {
+            "fieldname": "stage_order",
+            "fieldtype": "Int",
+            "in_list_view": 1,
+            "label": "Stage Order",
+            "reqd": 1,
+            "unique": 1
+        },
+        {
+            "default": "0",
+            "fieldname": "is_terminal",
+            "fieldtype": "Check",
+            "label": "Is Terminal Stage"
+        },
+        {
+            "default": "1",
+            "fieldname": "enabled",
+            "fieldtype": "Check",
+            "in_list_view": 1,
+            "label": "Enabled"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "description": "Frappe Role for department users (e.g. 'Seller Onboarding User')",
+            "fieldname": "department_role",
+            "fieldtype": "Link",
+            "label": "Department Role",
+            "options": "Role"
+        },
+        {
+            "description": "Frappe Role for department managers (e.g. 'Seller Onboarding Manager')",
+            "fieldname": "manager_role",
+            "fieldtype": "Link",
+            "label": "Manager Role",
+            "options": "Role"
+        },
+        {
+            "fieldname": "section_break_team",
+            "fieldtype": "Section Break",
+            "label": "Team Members"
+        },
+        {
+            "description": "Users in this department who will be assigned leads via load balancing",
+            "fieldname": "team_members",
+            "fieldtype": "Table",
+            "label": "Team Members",
+            "options": "Department Team Member"
+        },
+        {
+            "fieldname": "section_break_2",
+            "fieldtype": "Section Break",
+            "label": "Internal Status Configuration"
+        },
+        {
+            "description": "Comma-separated internal statuses for this department (e.g. 'In Progress, Waiting for Client, Review')",
+            "fieldname": "internal_statuses",
+            "fieldtype": "Small Text",
+            "label": "Internal Statuses"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2026-02-23 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Lead Routing",
+    "name": "Department Pipeline Stage",
+    "naming_rule": "By fieldname",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "read": 1,
+            "role": "All"
+        }
+    ],
+    "show_title_field_in_link": 1,
+    "sort_field": "stage_order",
+    "sort_order": "ASC",
+    "states": [],
+    "title_field": "stage_name",
+    "track_changes": 1
+}

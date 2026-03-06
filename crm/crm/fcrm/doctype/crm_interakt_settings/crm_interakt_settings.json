@@ -1,0 +1,158 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "creation": "2026-01-30 10:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "section_break_main",
+        "enabled",
+        "column_break_main",
+        "send_welcome_on_lead_create",
+        "section_break_welcome",
+        "welcome_template_name",
+        "welcome_header_url",
+        "column_break_welcome",
+        "welcome_header_filename",
+        "section_break_api",
+        "api_key",
+        "column_break_api",
+        "default_country_code",
+        "section_break_webhook",
+        "webhook_url",
+        "webhook_secret"
+    ],
+    "fields": [
+        {
+            "default": "0",
+            "fieldname": "enabled",
+            "fieldtype": "Check",
+            "label": "Enabled"
+        },
+        {
+            "depends_on": "enabled",
+            "fieldname": "api_key",
+            "fieldtype": "Password",
+            "in_list_view": 1,
+            "label": "API Key",
+            "mandatory_depends_on": "eval: doc.enabled"
+        },
+        {
+            "fieldname": "section_break_main",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "column_break_main",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "section_break_api",
+            "fieldtype": "Section Break",
+            "label": "API Configuration"
+        },
+        {
+            "fieldname": "column_break_api",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "+91",
+            "depends_on": "enabled",
+            "fieldname": "default_country_code",
+            "fieldtype": "Data",
+            "label": "Default Country Code"
+        },
+        {
+            "fieldname": "section_break_webhook",
+            "fieldtype": "Section Break",
+            "label": "Webhook Configuration"
+        },
+        {
+            "depends_on": "enabled",
+            "description": "Copy this URL and configure it in your Interakt dashboard",
+            "fieldname": "webhook_url",
+            "fieldtype": "Data",
+            "label": "Webhook URL",
+            "read_only": 1
+        },
+        {
+            "depends_on": "enabled",
+            "fieldname": "webhook_secret",
+            "fieldtype": "Password",
+            "label": "Webhook Secret"
+        },
+        {
+            "default": "0",
+            "depends_on": "enabled",
+            "description": "Automatically send welcome message when a new lead is created",
+            "fieldname": "send_welcome_on_lead_create",
+            "fieldtype": "Check",
+            "label": "Send Welcome Message on Lead Create"
+        },
+        {
+            "depends_on": "send_welcome_on_lead_create",
+            "fieldname": "section_break_welcome",
+            "fieldtype": "Section Break",
+            "label": "Welcome Template Configuration"
+        },
+        {
+            "default": "seller_registration",
+            "depends_on": "send_welcome_on_lead_create",
+            "description": "Name of the Interakt template to send as welcome message",
+            "fieldname": "welcome_template_name",
+            "fieldtype": "Data",
+            "label": "Welcome Template Name"
+        },
+        {
+            "depends_on": "send_welcome_on_lead_create",
+            "description": "URL for the template header file (e.g., PDF URL). Leave blank if template has no file header.",
+            "fieldname": "welcome_header_url",
+            "fieldtype": "Small Text",
+            "label": "Welcome Header File URL"
+        },
+        {
+            "fieldname": "column_break_welcome",
+            "fieldtype": "Column Break"
+        },
+        {
+            "depends_on": "send_welcome_on_lead_create",
+            "description": "Filename for the header file (e.g., Ipshopy_Policies.pdf)",
+            "fieldname": "welcome_header_filename",
+            "fieldtype": "Data",
+            "label": "Welcome Header Filename"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "issingle": 1,
+    "links": [],
+    "modified": "2026-01-30 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "FCRM",
+    "name": "CRM Interakt Settings",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "print": 1,
+            "read": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "print": 1,
+            "read": 1,
+            "role": "Sales Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "track_changes": 1
+}
